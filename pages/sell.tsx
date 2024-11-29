@@ -14,9 +14,24 @@ export default function Sell() {
     const [selectedNFT, setSelectedNFT] = useState<NFTType>();
 
     return (
-        <Container maxW={"1200px"} p={5}>
-            <Heading>Sell NFTs</Heading>
-            <Text>Select which NFT to sell below.</Text>
+        <Container 
+            maxW={"1200px"} 
+            p={5} 
+            display="flex" 
+            flexDirection="column" 
+            alignItems="center" 
+            justifyContent="center" 
+            minH="315vh"
+        >
+            {/* Heading and Text */}
+            <Heading fontFamily="'Roboto', sans-serif" textAlign="center" mb={4}>
+                Sell NFTs
+            </Heading>
+            <Text fontFamily="'Roboto', sans-serif" textAlign="center" mb={8}>
+                Select which NFT to sell below.
+            </Text>
+
+            {/* NFT Grid or Selected NFT */}
             {!selectedNFT ? (
                 <NFTGrid
                     data={data}
@@ -52,6 +67,16 @@ export default function Sell() {
                     </Card>
                 </Flex>
             )}
+
+            {/* LED Strip */}
+            <Box 
+                position="absolute" 
+                bottom="0" 
+                width="100%" 
+                height="10px" 
+                bgColor="green.500" 
+                boxShadow="0 0 10px rgba(0, 255, 0, 0.5)" 
+            ></Box>
         </Container>
-    )
+    );
 }
