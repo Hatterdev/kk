@@ -208,7 +208,7 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
 export const getStaticProps: GetStaticProps = async (context) => {
     const tokenId = context.params?.tokenId as string;
 
-    const sdk = new ThirdwebSDK("Binance");
+    const sdk = new ThirdwebSDK("Binance", { clientId: "40d8cd81884694b3bcc2afd03fe17529" });
 
     const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
@@ -230,7 +230,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const sdk = new ThirdwebSDK("Binance");
+    const sdk = new ThirdwebSDK("Binance", { clientId: "40d8cd81884694b3bcc2afd03fe17529" });
 
     const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
@@ -248,5 +248,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths,
         fallback: "blocking", // can also be true or 'blocking'
-    };
-};
+   
