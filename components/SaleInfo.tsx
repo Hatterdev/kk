@@ -39,15 +39,13 @@ export default function SaleInfo({ nft }: Props) {
     async function checkAndProvideApproval() {
         const hasApproval = await nftCollection?.call(
             "isApprovedForAll",
-            nft.owner,
-            MARKETPLACE_ADDRESS
+            [nft.owner, MARKETPLACE_ADDRESS] 
         );
 
         if (!hasApproval) {
             const txResult = await nftCollection?.call(
                 "setApprovalForAll",
-                MARKETPLACE_ADDRESS,
-                true
+                [MARKETPLACE_ADDRESS, true]
             );
 
             if (txResult) {
