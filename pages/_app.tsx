@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
       activeChain={Binance}
-      clientId={process.env.THIRDWEB_API_KEY!} // Usando a chave da API do .env.local
+      clientId={process.env.THIRDWEB_API_KEY} // Usando a chave da API do .env.local
     >
       <ChakraProvider>
         <Navbar />
