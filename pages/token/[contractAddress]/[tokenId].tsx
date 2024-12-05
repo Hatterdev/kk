@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 import React from "react";
-import { MediaRenderer } from "thirdweb/react";
+import { MediaRenderer } from "@thirdweb-dev/react";
 import {
 	getAllValidListings,
 	getAllValidAuctions,
